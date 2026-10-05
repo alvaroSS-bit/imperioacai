@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Império Açaí</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--p:#6a1b9a;--pd:#2d0a4e;--pl:#f3e8fb;--g:#d4a017;--bg:#faf7fd;--c:#fff;--t:#24112f;--m:#7a6a86;--b:#e4d6ef;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15061f;--c:#220c33;--t:#f5ecfb;--m:#b7a3c8;--b:#3d2057;--pl:#331250}}
+:root[data-theme="dark"]{--bg:#15061f;--c:#220c33;--t:#f5ecfb;--m:#b7a3c8;--b:#3d2057;--pl:#331250}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--t);font:16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+button{font:inherit;cursor:pointer;border:0;transition:.2s}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:linear-gradient(90deg,var(--pd),var(--p));color:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;letter-spacing:.5px;cursor:pointer}.logo svg{width:34px;height:26px}.logo b{color:var(--g)}
+.dnav{display:none;gap:6px}.dnav button{background:none;color:#fff;padding:8px 12px;border-radius:20px}.dnav button:hover,.dnav .on{background:#ffffff25}
+nav.bot{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--c);border-top:1px solid var(--b);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));z-index:6}
+nav.bot button{flex:1;background:none;color:var(--m);font-size:11px;position:relative;padding:4px}nav.bot span{display:block;font-size:22px}nav.bot .on{color:var(--p);font-weight:700}
+.bd{position:absolute;top:0;right:22%;background:var(--g);color:#2d0a4e;border-radius:10px;font-size:11px;min-width:18px;padding:0 4px;font-weight:800}
+main{max-width:980px;margin:0 auto;padding:16px;animation:in .3s}@keyframes in{from{opacity:0;transform:translateY(8px)}}
+.hero{background:radial-gradient(circle at 80% 0,#9b3fd0,transparent 50%),linear-gradient(135deg,var(--pd),var(--p));color:#fff;border-radius:24px;padding:32px 22px;text-align:center}
+.hero h1{margin:8px 0;font-size:30px}.hero p{opacity:.9}.crown{font-size:44px}
+.btn{background:var(--p);color:#fff;padding:14px 22px;border-radius:14px;font-weight:700;display:inline-block;margin:4px}.btn:hover{filter:brightness(1.15)}.btn:active{transform:scale(.97)}
+.gold{background:var(--g);color:#2d0a4e}.ghost{background:#ffffff22;color:#fff;border:1px solid #ffffff66}.full{width:100%;margin:8px 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin:16px 0}
+.card{background:var(--c);border:1px solid var(--b);border-radius:18px;padding:16px;box-shadow:0 2px 10px #6a1b9a14}
+.cat{text-align:center;cursor:pointer}.cat:hover{transform:translateY(-3px);border-color:var(--g)}.cat .e{font-size:44px}
+h2{margin:18px 0 8px}h3{margin:0 0 8px}.m{color:var(--m);font-size:14px}.step{margin:14px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{background:var(--c);color:var(--t);border:1.5px solid var(--b);border-radius:22px;padding:10px 14px}
+.chip.on{background:var(--p);color:#fff;border-color:var(--p);transform:scale(1.03)}.chip.none.on{background:var(--m);border-color:var(--m)}.chip.dis{opacity:.4}
+.sz{flex:1;min-width:90px;text-align:center;border-radius:16px;padding:12px}.sz b{display:block;color:inherit}
+.sum{position:sticky;bottom:calc(70px + env(safe-area-inset-bottom,0px));background:var(--c);border:2px solid var(--g);border-radius:18px;padding:14px;margin-top:16px}
+input,textarea,select{width:100%;padding:12px;border-radius:12px;border:1.5px solid var(--b);background:var(--c);color:var(--t);font:inherit;margin:4px 0}
+.row{display:flex;gap:8px}.row>*{flex:1}.q{display:flex;align-items:center;gap:10px}.q button{width:34px;height:34px;border-radius:50%;background:var(--pl);color:var(--p);font-weight:800}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:18px}.ln{white-space:pre-line;font-size:14px;color:var(--m)}
+.tr{display:flex;flex-direction:column;gap:10px}.tr div{display:flex;gap:10px;align-items:center}.tr i{width:16px;height:16px;border-radius:50%;background:var(--b)}.tr .on i{background:var(--p);box-shadow:0 0 0 4px var(--pl)}.tr .on{font-weight:700}
+pre{white-space:pre-wrap;background:var(--pl);padding:12px;border-radius:12px;font:13px/1.4 ui-monospace,monospace;overflow-x:auto}
+footer{background:var(--pd);color:#ddd;padding:24px 16px;margin-top:30px;text-align:center;font-size:14px}footer b{color:var(--g)}footer a{color:#fff;cursor:pointer;margin:0 6px}
+#toast{position:fixed;top:70px;left:50%;transform:translateX(-50%);padding:12px 18px;border-radius:14px;color:#fff;z-index:20;display:none;max-width:90%}
+@media(min-width:800px){.dnav{display:flex}nav.bot{display:none}body{padding-bottom:0}.hero h1{font-size:44px}.sum{bottom:10px}}
+</style></head><body>
+<header><div class="logo" onclick="go('home')"><svg viewBox="0 0 40 30"><path d="M3 26 5 8l9 9 6-13 6 13 9-9 2 18z" fill="#d4a017"/><rect x="3" y="26" width="34" height="3" rx="1" fill="#f3c94a"/></svg><span>IMPÉRIO <b>AÇAÍ</b></span></div>
+<div class="dnav" id="dn"></div></header>
+<div id="toast"></div><main id="app"></main>
+<footer id="ft"></footer>
+<nav class="bot" id="bn"></nav>
+<script>
+const L={
+base:['Açaí com Banana','Açaí com Guaraná','Açaí com Maracujá','Açaí com Ninho','Açaí Premium','Açaí Tradicional','Açaí Trufado','Açaí Zero'],
+sorv:['Blue Ice','Cajá','Capuccino','Chocolate','Creme de Avelã','Creme de Creme','Creme de Cupuaçu','Creme de Flocos','Creme Ferrero Rocher','Cupuaçu','Maracujá','Morango','Morango Tentação','Ninho Trufado','Tapioca','Unicórnio'],
+acc:['Amendoim Triturado','Biz ao Leite','Biz Branco','Canudos','Cereja','Choco Boll','Confete','Fini','Granola','Jujuba','Leite Condensado','Leite em Pó'],
+cob:['Calda de Avelã','Calda Creme de Chocolate','Calda de Amendoim','Calda de Ninho','Calda de Pistache','Choco Wafer','Cookies Branco'],
+fruta:['Banana','Kiwi','Morango','Uva'],ms:['Chocolate','Doce de Leite','Morango']};
+const T={acai:{n:'Açaí',e:'🍇',max:3,sz:[[300,14.99],[500,24.99],[700,29.99]]},
+sorvete:{n:'Sorvete',e:'🍦',max:4,sz:[[300,14.99],[400,19.99],[500,24.99],[700,29.99]]},
+milk:{n:'Milk Shake',e:'🥤',sz:[[300,12.99],[500,15.99]]}};
+const PAG=['Cartão de Crédito no App (Online)','PIX no App (Online)','Cartão de Crédito','Cartão de Débito','Dinheiro'];
+const $=id=>document.getElementById(id),f=v=>'R$ '+v.toFixed(2).replace('.',',');
+const ld=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+let cfg=ld('cfg',{whats:'',insta:'',end:'',hor:''}),cart=ld('cart',[]),view='home',b=null,last=ld('last',null);
+let c={modo:'delivery',nome:'',tel:'',cep:'',rua:'',num:'',comp:'',bairro:'',ref:'',ent:'',pag:'',troco:'nao',tv:'',obs:''};
+function toast(m,ok=1){const t=$('toast');t.textContent=m;t.style.background=ok?'#2e7d32':'#c62828';t.style.display='block';setTimeout(()=>t.style.display='none',2800)}
+function go(v){if(T[v]&&(!b||b.t!==v))b={t:v,s:null,base:null,sorv:null,acc:[],cob:null,fruta:null,sabor:null,obs:''};view=v;render();scrollTo(0,0)}
+const navs=[['home','🏠','Início'],['acai','🍇','Açaí'],['sorvete','🍦','Sorvetes'],['milk','🥤','Milk Shake'],['cart','🛒','Carrinho']];
+function render(){const n=cart.reduce((a,i)=>a+i.qty,0);
+$('bn').innerHTML=navs.map(x=>`<button class="${view==x[0]?'on':''}" onclick="go('${x[0]}')"><span>${x[1]}</span>${x[2]}${x[0]=='cart'&&n?`<i class="bd">${n}</i>`:''}</button>`).join('');
+$('dn').innerHTML=navs.map(x=>`<button class="${view==x[0]?'on':''}" onclick="go('${x[0]}')">${x[1]} ${x[2]}${x[0]=='cart'&&n?' ('+n+')':''}</button>`).join('');
+$('app').innerHTML=V[view]();
+$('ft').innerHTML=`<div style="font-size:22px">👑 <b>IMPÉRIO AÇAÍ</b></div><p>O sabor que merece uma coroa.</p><p>${navs.slice(0,4).map(x=>`<a onclick="go('${x[0]}')">${x[2]}</a>`).join('')}<a onclick="go('cfg')">Atendimento</a></p>
+<p>📱 WhatsApp: ${cfg.whats||'—'} · 📷 ${cfg.insta||'—'}<br>📍 ${cfg.end||'—'} · 🕒 ${cfg.hor||'—'}</p>`}
+function sel(k,l,i){const none=i<0;return `chip ${none?'none':''} ${(none?!b[k]:b[k]===L[l][i])?'on':''}`}
+function group(title,k,l,none,req){return `<div class="step"><h3>${title}</h3><div class="chips">`+L[l].map((x,i)=>`<button class="${sel(k,l,i)}" onclick="pick('${k}','${l}',${i})">${x}</button>`).join('')+(none?`<button class="${sel(k,l,-1)}" onclick="pick('${k}','${l}',-1)">${none}</button>`:'')+`</div></div>`}
+function pick(k,l,i){b[k]=i<0?null:L[l][i];render()}
+function accTog(i){const m=T[b.t].max,v=L.acc[i],x=b.acc.indexOf(v);if(x>-1)b.acc.splice(x,1);else if(b.acc.length<m)b.acc.push(v);else return toast('Máximo de '+m+' acompanhamentos',0);render()}
+function accG(){const m=T[b.t].max,full=b.acc.length>=m;return `<div class="step"><h3>Acompanhamentos: ${b.acc.length}/${m} <span class="m">(opcional)</span></h3><div class="chips">`+L.acc.map((x,i)=>{const on=b.acc.includes(x);return `<button class="chip ${on?'on':''} ${full&&!on?'dis':''}" onclick="accTog(${i})">${on?'✓ ':''}${x}</button>`}).join('')+`<button class="chip none ${b.acc.length?'':'on'}" onclick="b.acc=[];render()">Sem acompanhamentos</button></div></div>`}
+function bsel(i){b.s=i;render()}
+const bld=()=>{const t=T[b.t];let h=`<h2>${t.e} Monte seu ${t.n}</h2><div class="step"><h3>Escolha o tamanho</h3><div class="chips">`+t.sz.map((z,i)=>`<button class="chip sz ${b.s===i?'on':''}" onclick="bsel(${i})"><b>${z[0]}ml</b>${f(z[1])}</button>`).join('')+'</div></div>';
+if(b.t=='acai')h+=group('1. Escolha seu açaí (obrigatório)','base','base')+group('2. Escolha 1 sorvete','sorv','sorv','Sem sorvete')+accG()+group('4. Escolha 1 cobertura','cob','cob','Sem cobertura')+group('5. Escolha 1 fruta','fruta','fruta','Sem fruta');
+else if(b.t=='sorvete')h+=group('1. Escolha 1 sabor (obrigatório)','sabor','sorv')+accG()+group('3. Escolha 1 cobertura','cob','cob','Sem cobertura')+group('4. Escolha 1 fruta','fruta','fruta','Sem fruta');
+else h+=group('Escolha o sabor (obrigatório)','sabor','ms');
+h+=`<div class="step"><h3>Alguma observação?</h3><textarea rows="2" placeholder="Ex.: pouco leite condensado, sem granola" oninput="b.obs=this.value">${b.obs}</textarea></div>`;
+const tot=b.s!==null?t.sz[b.s][1]:0;
+return h+`<div class="sum"><h3>SEU ${t.n.toUpperCase()}</h3><div class="ln">${b.s!==null?lines({...b,t:b.t,size:t.sz[b.s][0]}).join('\n'):'Escolha o tamanho'}</div><div class="tot"><span>TOTAL</span><span>${f(tot)}</span></div><button class="btn full" onclick="add()">ADICIONAR AO CARRINHO</button></div>`};
+function lines(i){const a=[T[i.t].n+' '+i.size+'ml'];if(i.base)a.push('Base: '+i.base);if(i.sabor)a.push('Sabor: '+i.sabor);if(i.t!='milk'){if(i.t=='acai')a.push('Sorvete: '+(i.sorv||'Sem sorvete'));a.push('Acompanhamentos: '+(i.acc&&i.acc.length?i.acc.join(', '):'Sem acompanhamentos'),'Cobertura: '+(i.cob||'Sem cobertura'),'Fruta: '+(i.fruta||'Sem fruta'))}if(i.obs)a.push('Obs: '+i.obs);return a}
+function add(){const t=T[b.t];if(b.s===null)return toast('Escolha o tamanho',0);if(b.t=='acai'&&!b.base)return toast('Escolha seu açaí',0);if(b.t!='acai'&&b.t!='milk'&&!b.sabor||b.t=='milk'&&!b.sabor)return toast('Escolha o sabor',0);
+cart.push({...b,acc:[...b.acc],size:t.sz[b.s][0],price:t.sz[b.s][1],qty:1});sv('cart',cart);b=null;toast('Adicionado ao carrinho 👑');go('cart')}
+const sub=()=>cart.reduce((a,i)=>a+i.price*i.qty,0);
+function qty(i,d){cart[i].qty+=d;if(cart[i].qty<1)cart.splice(i,1);sv('cart',cart);render()}
+function rad(k,v,txt){return `<button class="chip ${c[k]==v?'on':''}" onclick="c['${k}']='${v}';render()">${txt}</button>`}
+const inp=(k,ph,t='text')=>`<input type="${t}" placeholder="${ph}" value="${c[k]}" oninput="c['${k}']=this.value">`;
+function msg(num){const d=c.modo=='delivery';let m=`👑 NOVO PEDIDO — IMPÉRIO AÇAÍ\n\nPedido: #${num}\n\nCLIENTE:\nNome: ${c.nome}\nTelefone: ${c.tel}\n\nTIPO:\n${d?'🛵 Delivery':'🏪 Retirada no local'}\n`;
+if(d)m+=`\nENDEREÇO:\nCEP: ${c.cep||'-'}\nRua: ${c.rua}\nNúmero: ${c.num}\nComplemento: ${c.comp||'-'}\nBairro: ${c.bairro}\nReferência: ${c.ref||'-'}\nObs. entregador: ${c.ent||'-'}\n`;
+m+='\nITENS:\n';cart.forEach(i=>{m+=`\n${i.qty}x ${T[i.t].n} ${i.size}ml — ${f(i.price*i.qty)}\n`+lines(i).slice(1).join('\n')+'\n--------------------\n'});
+m+=`\nSUBTOTAL: ${f(sub())}\nENTREGA: ${d?'A CONFIRMAR':'Retirada (sem taxa)'}\n\nPAGAMENTO: ${c.pag}${c.pag=='Dinheiro'?(c.troco=='sim'?' (troco para R$ '+c.tv+')':' (sem troco)'):''}\n\nOBSERVAÇÕES: ${c.obs||'Sem observações.'}\n`;
+if(d)m+='\n⚠ Informar ao cliente a taxa de entrega e o valor final.';return m}
+function send(){const d=c.modo=='delivery';if(!c.nome.trim()||!c.tel.trim())return toast('Informe nome e telefone',0);
+if(d&&(!c.rua.trim()||!c.num.trim()||!c.bairro.trim()))return toast('Preencha rua, número e bairro',0);if(!c.pag)return toast('Escolha a forma de pagamento',0);
+if(c.pag=='Dinheiro'&&c.troco=='sim'&&!c.tv)return toast('Informe o valor do troco',0);
+const w=(cfg.whats||'').replace(/\D/g,'');if(!w){toast('WhatsApp da loja não configurado',0);return go('cfg')}
+const n=String(ld('seq',0)+1).padStart(4,'0');sv('seq',+n);const m=msg(n);last={num:n,msg:m,modo:c.modo,st:0};sv('last',last);
+cart=[];sv('cart',cart);window.open('https://wa.me/'+(w.length<=11?'55'+w:w)+'?text='+encodeURIComponent(m),'_blank');go('done')}
+const V={
+home:()=>`<div class="hero"><div class="crown">👑</div><b style="letter-spacing:3px">IMPÉRIO AÇAÍ</b><h1>O sabor que merece uma coroa.</h1><p>Monte seu açaí, escolha seu sorvete ou peça seu milk shake.</p><button class="btn gold" onclick="go('acai')">FAZER PEDIDO</button><button class="btn ghost" onclick="document.getElementById('cats').scrollIntoView({behavior:'smooth'})">VER CARDÁPIO</button></div>
+<h2 id="cats">Cardápio</h2><div class="grid">`+Object.keys(T).map(k=>`<div class="card cat" onclick="go('${k}')"><div class="e">${T[k].e}</div><h3>${T[k].n.toUpperCase()}</h3><div class="m">${T[k].sz.map(z=>z[0]+'ml '+f(z[1])).join('<br>')}</div></div>`).join('')+'</div>',
+acai:bld,sorvete:bld,milk:bld,
+cart:()=>{if(!cart.length)return `<div class="card" style="text-align:center"><h2>🛒 Carrinho vazio</h2><button class="btn" onclick="go('acai')">FAZER PEDIDO</button></div>`;
+return `<h2>🛒 SEU PEDIDO</h2>`+cart.map((i,x)=>`<div class="card" style="margin:8px 0"><b>${T[i.t].e} ${lines(i)[0]}</b><div class="ln">${lines(i).slice(1).join('\n')}</div><div class="row" style="align-items:center"><div class="q"><button onclick="qty(${x},-1)">−</button><b>${i.qty}</b><button onclick="qty(${x},1)">+</button></div><b style="text-align:right">${f(i.price*i.qty)}</b></div></div>`).join('')+`<div class="card"><div class="tot"><span>Subtotal</span><span>${f(sub())}</span></div><p class="m">Taxa de entrega: a definir pelo estabelecimento</p><button class="btn full" onclick="go('checkout')">FINALIZAR PEDIDO</button></div>`},
+checkout:()=>{if(!cart.length)return V.cart();const d=c.modo=='delivery';return `<h2>COMO VOCÊ QUER RECEBER?</h2><div class="chips">${rad('modo','retirada','🏪 RETIRADA NO LOCAL')}${rad('modo','delivery','🛵 DELIVERY')}</div>
+<div class="card" style="margin:12px 0"><h3>Seus dados</h3>${inp('nome','Nome')}${inp('tel','Telefone / WhatsApp','tel')}
+${d?`<h3 style="margin-top:12px">Endereço</h3>${inp('cep','CEP')}${inp('rua','Rua')}<div class="row">${inp('num','Número')}${inp('comp','Complemento')}</div>${inp('bairro','Bairro')}${inp('ref','Referência')}${inp('ent','Observação para o entregador (ex.: portão branco)')}<p class="m">Taxa de entrega será informada pelo estabelecimento após a análise do endereço.</p>`:'<p>✅ Você escolheu retirar seu pedido no estabelecimento.</p>'}</div>
+<div class="card"><h3>Forma de pagamento</h3><div class="chips">${PAG.map(p=>`<button class="chip ${c.pag==p?'on':''}" onclick="c.pag='${p}';render()">${p}</button>`).join('')}</div>
+${c.pag.includes('App')?'<p class="m">O pagamento online ainda não está integrado: a forma escolhida será apenas enviada ao estabelecimento, que combinará o pagamento com você.</p>':''}
+${c.pag=='Dinheiro'?`<h3 style="margin-top:12px">Precisa de troco?</h3><div class="chips">${rad('troco','nao','Não')}${rad('troco','sim','Sim')}</div>${c.troco=='sim'?inp('tv','Troco para quanto?'):''}`:''}</div>
+<div class="card" style="margin:12px 0"><h3>Alguma observação?</h3><textarea rows="2" oninput="c.obs=this.value">${c.obs}</textarea></div>
+<div class="card"><h3>Revisão</h3><pre>${cart.map(i=>i.qty+'x '+lines(i).join('\n  ')).join('\n\n')}</pre><div class="tot"><span>Subtotal</span><span>${f(sub())}</span></div><div class="m">Entrega: ${d?'A confirmar':'Retirada'} · Total dos produtos: ${f(sub())}</div><button class="btn full" onclick="send()">ENVIAR PEDIDO</button></div>`},
+done:()=>{if(!last)return V.home();const st=last.modo=='delivery'?['Pedido enviado','Em preparação','Pronto','Saiu para entrega','Entregue']:['Pedido enviado','Em preparação','Pronto para retirada','Retirado'];
+return `<div class="hero"><div class="crown">👑</div><h1>PEDIDO ENVIADO!</h1><p>Seu pedido #${last.num} foi enviado para o Império Açaí.</p>${last.modo=='delivery'?'<p>Em caso de delivery, o estabelecimento irá confirmar a taxa de entrega e o valor final.</p>':''}</div>
+<div class="card" style="margin:12px 0"><h3>Status do pedido</h3><div class="tr">${st.map((s,i)=>`<div class="${i<=last.st?'on':''}"><i></i>${s}</div>`).join('')}</div></div>
+<div class="card"><h3>Resumo</h3><pre>${last.msg.replace(/</g,'&lt;')}</pre></div><button class="btn" onclick="go('home')">VOLTAR AO INÍCIO</button><button class="btn gold" onclick="window.scrollTo(0,0)">VER MEU PEDIDO</button>`},
+cfg:()=>`<h2>⚙ Configurações da loja</h2><div class="card"><p class="m">Salvo neste aparelho. Defina o WhatsApp para receber os pedidos (com DDD).</p>${[['whats','WhatsApp (ex.: 11999999999)'],['insta','Instagram'],['end','Endereço'],['hor','Horário de funcionamento']].map(x=>`<input placeholder="${x[1]}" value="${cfg[x[0]]}" oninput="cfg['${x[0]}']=this.value">`).join('')}<button class="btn full" onclick="sv('cfg',cfg);render();toast('Configurações salvas')">SALVAR</button></div>`};
+render();
+</script></body></html>
